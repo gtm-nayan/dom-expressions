@@ -113,8 +113,8 @@ importers:
         specifier: ^3.1
         version: 3.1.1
       seroval:
-        specifier: ^0.11.1
-        version: 0.11.1
+        specifier: ^0.11.2
+        version: 0.11.2
 
   packages/hyper-dom-expressions:
     devDependencies:
@@ -7087,8 +7087,8 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /seroval@0.11.1:
-    resolution: {integrity: sha512-jirbTYCSMyGWAESdmaiLmqKi0C5JLWVAcZiPbI5CeH5hfZ3E2aqTaDot5yO9oautFLwSfU4M3q8Zcpa4OG3/Pg==}
+  /seroval@0.11.2:
+    resolution: {integrity: sha512-ZuTQp5lc+a0huMqw4WHzL2U9yt/se8SZ7BlHnDJC9Qqof7nb4WVmA2oGjQ6KbijREtzTp6dwvE+jhEt/1u2OVQ==}
     engines: {node: '>=10'}
     dev: true
 
