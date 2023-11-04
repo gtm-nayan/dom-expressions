@@ -1,6 +1,7 @@
 import { Aliases, BooleanAttributes, ChildProperties } from "./constants";
 import { sharedConfig, root } from "rxcore";
 import { createSerializer, getGlobalHeaderScript, getLocalHeaderScript } from "./serializer";
+import { encode } from "./encoder";
 export { createComponent } from "rxcore";
 
 // Based on https://github.com/WebReflection/domtagger/blob/master/esm/sanitizer.js
@@ -466,7 +467,7 @@ export function mergeProps(...sources) {
 
 export function getHydrationKey() {
   const hydrate = sharedConfig.context;
-  return hydrate && !hydrate.noHydrate && `${hydrate.id}${hydrate.count++}`;
+  return hydrate && !hydrate.noHydrate && `${hydrate.id}${encode(hydrate.count++)}`;
 }
 
 export function useAssets(fn) {
@@ -494,7 +495,7 @@ export function Hydration(props) {
   sharedConfig.context = {
     ...context,
     count: 0,
-    id: `${context.id}${context.count++}-`,
+    id: `${context.id}${encode(context.count++)}-`,
     noHydrate: false
   };
   const res = props.children;

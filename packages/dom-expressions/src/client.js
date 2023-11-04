@@ -17,6 +17,7 @@ import {
   mergeProps
 } from "rxcore";
 import reconcileArrays from "./reconcile";
+import { encode } from "./encoder";
 export {
   Properties,
   ChildProperties,
@@ -536,7 +537,7 @@ function gatherHydratable(element, root) {
 
 export function getHydrationKey() {
   const hydrate = sharedConfig.context;
-  return `${hydrate.id}${hydrate.count++}`;
+  return `${hydrate.id}${encode(hydrate.count++)}`;
 }
 
 export function NoHydration(props) {
